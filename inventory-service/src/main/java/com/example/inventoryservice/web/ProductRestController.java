@@ -2,7 +2,7 @@ package com.example.inventoryservice.web;
 
 import com.example.inventoryservice.entities.Product;
 import com.example.inventoryservice.repository.ProductRepository;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +17,7 @@ public class ProductRestController {
     public ProductRestController(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
-    @PreAuthorize("hasAnyAuthority('USER')")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     @GetMapping("/products")
     public List<Product> getAllProduct(){
         return productRepository.findAll();

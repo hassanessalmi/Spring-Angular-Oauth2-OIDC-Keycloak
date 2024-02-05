@@ -4,8 +4,9 @@ import {ProductsComponent} from "./ui/products/products.component";
 import {augmentIndexHtml} from "@angular-devkit/build-angular/src/utils/index-file/augment-index-html";
 import {AuthGuard} from "./guards/auth.guard";
 
-const routes: Routes = [{ path:"products",component:ProductsComponent,canActivate:[AuthGuard],data :{ roles:['ADMIN']}
-},
+
+const routes: Routes = [{ path:"products",component:ProductsComponent,canActivate:[AuthGuard],data:{roles:['ADMIN']}}
+
 ];
 
 @NgModule({

@@ -12,7 +12,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
       config: {
         url: 'http://localhost:8080',
         realm: 'ecom-web-app',
-        clientId: 'frant-end- angular-client'
+        clientId: 'frant-end-angular-client'
       },
       initOptions: {
         onLoad: 'check-sso',
